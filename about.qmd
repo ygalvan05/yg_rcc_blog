@@ -12,10 +12,18 @@ about:
       href: https://linkedin.com
     - icon: github
       text: Github
-      href: https://github.com
+      href: https://ygalvan05.github.io/yg_rcc_blog/
 ---
 
 Welcome to my website showing off my R portfolio!
+
+#### Coding Experience
+
+-   Java courses
+
+-   R Crash Course Workshop
+
+#### Education
 
 ```{r}
 

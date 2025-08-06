@@ -2,7 +2,9 @@
 title: "The -- project"
 author: "Yanin Galvan"
 date: "2025-08-06"
-categories: [data_science,sample_projects]
+categories: [data_science,data_visual]
 ---
 
-This is where my project will be.
+Data analysis visualization regarding migraines and relation between factors.
+
+![](/logo%20(2).png)

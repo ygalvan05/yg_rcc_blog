@@ -8,7 +8,7 @@ website:
     right:
       - about.qmd
       - icon: github
-        href: https://github.com/CrumpLab/quartoCourseBlog
+        href: https://ygalvan05.github.io/yg_rcc_blog/
       - icon: twitter
         href: https://twitter.com/MattCrumpLab
 format:
