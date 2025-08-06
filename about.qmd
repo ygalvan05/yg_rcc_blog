@@ -2,7 +2,7 @@
 title: "About"
 image: profile.jpg
 about:
-  template: jolla
+  template: solana
   links:
     - icon: twitter
       text: Twitter
@@ -22,5 +22,9 @@ The content on this page is from `about.qmd`. Edit that file to change how this 
 This is me!!
 
 **this is also me**
+
+:D
+
+8/6/25
 
 Try changing the template type from `jolla` to one of the other options for a different look and feel.
