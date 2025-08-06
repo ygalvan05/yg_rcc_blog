@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: "About me"
 image: profile.jpg
 about:
   template: solana
@@ -15,16 +15,9 @@ about:
       href: https://github.com
 ---
 
-The content on this page is from `about.qmd`. Edit that file to change how this page looks.
+Welcome to my website showing off my R portfolio!
 
-"About" pages are special quarto template pages, with multiple options: <https://quarto.org/docs/websites/website-about.html>.
+```{r}
 
-This is me!!
 
-**this is also me**
-
-:D
-
-8/6/25
-
-Try changing the template type from `jolla` to one of the other options for a different look and feel.
+```
