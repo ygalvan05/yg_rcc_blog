@@ -9,11 +9,11 @@ website:
       - about.qmd
       - icon: github
         href: https://ygalvan05.github.io/yg_rcc_blog/
-      - icon: twitter
-        href: https://twitter.com/MattCrumpLab
+      - icon: linkedin
+        href: https://www.linkedin.com/in/yanin-galvan-735890336/
 format:
   html:
-    theme: sandstone
+    theme: pulse
     css: styles.css
 
 editor: visual

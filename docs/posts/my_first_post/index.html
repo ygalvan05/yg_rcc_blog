@@ -22,6 +22,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -41,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-4dae546792046160cc0220569658f45b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-910b7ba7e41195ec6e97dbd0fdcaf583.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -101,7 +136,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/MattCrumpLab"> <i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://www.linkedin.com/in/yanin-galvan-735890336/"> <i class="bi bi-linkedin" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -117,6 +152,7 @@ ul.task-list li input[type="checkbox"] {
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">The – project</h1>
+            <p class="subtitle lead">Data Analysis Visualization</p>
                                 <div class="quarto-categories">
                 <div class="quarto-category">data_science</div>
                 <div class="quarto-category">data_visual</div>
@@ -156,10 +192,228 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>Data analysis visualization regarding migraines and relation between factors.</p>
-<p><img src="../../logo (2).png" class="img-fluid"></p>
+<section id="data-analysis-regarding-migraines-and-relation-between-its-factors." class="level2">
+<h2 class="anchored" data-anchor-id="data-analysis-regarding-migraines-and-relation-between-its-factors.">Data analysis regarding migraines and relation between its factors.</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../MigraineVision.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>Image: representation of vision during a migraine episode with auras present a.k.a ocular migraines.</p>
+<section id="introduction" class="level3">
+<h3 class="anchored" data-anchor-id="introduction">Introduction</h3>
+<ul>
+<li><p><strong>How does pain levels distribute across locations based on age?</strong></p>
+<ul>
+<li><strong>Prediction</strong>: Younger people will have more high levels of pains therefore longer duration than older people.</li>
+</ul></li>
+<li><p><strong>Does different locations trigger a different intensity level of migraines?</strong></p>
+<ul>
+<li><strong>Prediction</strong>: Migraines near the frontal will be more common and create a more intense pain for the patients.</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="approach" class="level3">
+<h3 class="anchored" data-anchor-id="approach">Approach</h3>
+<p><strong>Data Source Info</strong>: Kaggle, Migraine Symptom Data set for Classification</p>
+<p>Data was collected through public access publication of the National Library of Medicine and detailed symptoms profiles from observations.</p>
+<section id="variables" class="level4">
+<h4 class="anchored" data-anchor-id="variables">Variables:</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 29%">
+<col style="width: 14%">
+<col style="width: 38%">
+<col style="width: 16%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Age</strong>: based on participant</td>
+<td><strong>Duration</strong>: in hours</td>
+<td><p><strong>Location</strong>:</p>
+<p>1-Unilateral, 2-Bilateral, 3-Frontal, 4-Temporal</p></td>
+<td><p><strong>Intensity</strong>:</p>
+<p>Pain from 1(mild) to 5(severe)</p></td>
+</tr>
+<tr class="even">
+<td><strong>Frequency</strong>: over specific period</td>
+<td><strong>Vomit</strong>: 1-yes, 0-no</td>
+<td><p><strong>Language</strong>: speaking ability</p>
+<p>1-yes, 0-no</p></td>
+<td><p><strong>Ataxia</strong>: coordination problems</p>
+<p>1-yes.0-no</p></td>
+</tr>
+<tr class="odd">
+<td><strong>Character</strong>: type of pain 1-throbbing, 2-pressing, 3-sharp, 4-dull</td>
+<td><p><strong>Phonophobia</strong>: sound sensitivity</p>
+<p>1-yes, 0-no</p></td>
+<td><p><strong>Vertingo</strong>:</p>
+<p>1-yes, 0-no</p></td>
+<td><p><strong>Conscience</strong>: reduced consciousness</p>
+<p>1-yes, 0-no</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>Nausea</strong>: any nausea present</p>
+<p>1-yes, 0-no</p></td>
+<td><p><strong>Photophobia</strong>: light sensitivity</p>
+<p>1-yes, 0-no</p></td>
+<td><p><strong>Tinnitus</strong>:</p>
+<p>1-yes, 0-no</p></td>
+<td><p><strong>Paresthesia</strong>:</p>
+<p>abnormal skin sensations</p>
+<p>1-yes, 0-no</p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>Motor</strong>: motor function</p>
+<p>1-yes, 0-no</p></td>
+<td><p><strong>Visual</strong>: aura or flashes</p>
+<p>1-yes, 0-no</p></td>
+<td><p><strong>Hypoacusis</strong>:</p>
+<p>1-yes, 0-no</p></td>
+<td><p><strong>DPF</strong>: Dysfunctional physical factor</p>
+<p>1-yes, 0-no</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>Defect</strong>: visual field defect</p>
+<p>1-yes, 0-no</p></td>
+<td><p><strong>Sensory</strong>: numbness or tingling</p>
+<p>1-yes, 0-no</p></td>
+<td><p><strong>Diplopia</strong>:</p>
+<p>1-yes, 0-no</p></td>
+<td><p><strong>Type</strong>:</p>
+<p>(target variable)</p></td>
+</tr>
+</tbody>
+</table>
+<p>Records of 24 variables and 400 participants(rows).</p>
+<p>While type is under the variables table it is based on the final diagnosis on migraine using the data set.</p>
+<hr>
+</section>
+<section id="tools-used" class="level4">
+<h4 class="anchored" data-anchor-id="tools-used">Tools used:</h4>
+<ul>
+<li><p>Posit cloud</p></li>
+<li><p>Github</p></li>
+<li><p>tidyverse package</p></li>
+<li><p>ggplots2 package</p></li>
+<li><p>Kaggle Data Sets</p></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="approach-predictions" class="level3">
+<h3 class="anchored" data-anchor-id="approach-predictions">Approach &amp; Predictions</h3>
+<p>I will analysis how the age of the participants factor into the pain levels of the migraines and the duration of such. As well as the location and its effect on the pain of the presented migraine during the time the records were made.</p>
+<p>I predict participants with younger ages will have a higher pain intensity due to technology over use and longer duration due to long work shifts or long classes schedules during school(which both required an immense amount of technology use). Locations near the frontal part of our face will be the most common and painful due to daily habits disturbance from them.</p>
+<hr>
+</section>
+<section id="codes-results" class="level3">
+<h3 class="anchored" data-anchor-id="codes-results">Codes &amp; Results:</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ lubridate 1.9.4     ✔ tibble    3.3.0
+✔ purrr     1.1.0     ✔ tidyr     1.3.1
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>migraine_symptom_classification <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"migraine_symptom_classification.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Age Correlation:</strong></p>
+<p>In this graph we use age as our x variable to see how as we age the intensity of the migraines ether minimize or maximizes in the level of pain.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>intensity_vs_age <span class="ot">&lt;-</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">data =</span> migraine_symptom_classification,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a> <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> Intensity, <span class="at">x =</span> Age)) <span class="sc">+</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Participants Age"</span>,<span class="at">y =</span> <span class="st">"Self-Reported Intensity Level(1-5)"</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">title =</span> <span class="st">"Migraine Intensity Based On Age"</span>) </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>intensity_vs_age</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename =</span> <span class="st">"intensity_vs_age.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Saving 7 x 5 in image</code></pre>
+</div>
+</div>
+<p>Unexpectedly younger people actually have more cases of lower intensity levels compared to older people, thus rejecting the first part of my prediction.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>pain_duration_vs_age <span class="ot">&lt;-</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">data =</span> migraine_symptom_classification,</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> Intensity, <span class="at">x =</span> Age, <span class="at">color =</span> Duration)) <span class="sc">+</span> </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">position =</span> <span class="st">"jitter"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span> <span class="fu">labs</span>(</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Participants Age"</span>, <span class="at">y =</span> <span class="st">"Self-Reported Intensity Level(1-5)"</span>,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Migraine Intensity Based On Age"</span>, <span class="at">color =</span> <span class="st">"Duration (hrs)"</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>pain_duration_vs_age</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename =</span> <span class="st">"pain_duration_vs_age.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Saving 7 x 5 in image</code></pre>
+</div>
+</div>
+<p>Image: In this graph we used the position of “jitter” in order to have a better understanding of the results of our 400 participants without it overlapping.</p>
+<p>While the older participant had stronger pain levels they seem to have shorter duration migraines compared to the younger people which correlates with the second part of my prediction regarding age vs pain levels.</p>
+<p><strong>Location Correlation:</strong></p>
+<p>Our code allows us to distinguish how based on the location the pain distributes in different levels of intensity.</p>
+<p>(Used methods such as arrange and filter to determine age groups needed)</p>
+<p><strong>Ex:</strong> migraine_symptom_classification |&gt; arrange(desc(Age))</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>new_migraine_symptom_classification <span class="ot">&lt;-</span> migraine_symptom_classification <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">age_better =</span> <span class="fu">case_when</span>(</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  Age <span class="sc">&gt;</span> <span class="dv">10</span> <span class="sc">&amp;</span> Age <span class="sc">&lt;=</span> <span class="dv">20</span> <span class="sc">~</span> <span class="st">"10-20"</span>,Age <span class="sc">&gt;</span> <span class="dv">20</span> <span class="sc">&amp;</span> Age <span class="sc">&lt;=</span> <span class="dv">30</span> <span class="sc">~</span><span class="st">"21-30"</span>, </span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  Age <span class="sc">&gt;</span> <span class="dv">30</span> <span class="sc">&amp;</span> Age <span class="sc">&lt;=</span> <span class="dv">40</span> <span class="sc">~</span><span class="st">"31-40"</span>, Age <span class="sc">&gt;</span> <span class="dv">40</span> <span class="sc">&amp;</span> Age <span class="sc">&lt;=</span> <span class="dv">50</span> <span class="sc">~</span><span class="st">"41-50"</span>, </span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  Age <span class="sc">&gt;</span> <span class="dv">50</span> <span class="sc">&amp;</span> Age <span class="sc">&lt;=</span> <span class="dv">60</span> <span class="sc">~</span><span class="st">"51-60"</span>, Age <span class="sc">&gt;</span> <span class="dv">60</span> <span class="sc">&amp;</span> Age <span class="sc">&lt;=</span> <span class="dv">90</span> <span class="sc">~</span><span class="st">"61+"</span>,))</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>intensity_vs_location <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> new_migraine_symptom_classification, </span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Location, <span class="at">y =</span> Intensity, <span class="at">color =</span> age_better)) <span class="sc">+</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">position =</span> <span class="st">"jitter"</span>) <span class="sc">+</span> </span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>age_better) <span class="sc">+</span> </span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Location of pain(1-4)"</span>, <span class="at">y =</span> <span class="st">"Self-Reported Intensity(1-5)"</span>,</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"How pain distributes on locatioons based on age"</span>, <span class="at">color =</span> <span class="st">"Age Groups"</span>)</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>intensity_vs_location</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename =</span> <span class="st">"intensity_vs_location.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Saving 7 x 5 in image</code></pre>
+</div>
+</div>
+<p>Image: Those in between the ages of 21-30 located their pain in a unilateral location(making them 136 out of the 400 participants).</p>
+<p>Unlike my prediction the graph tells us the majority of the participant developed migraines in unilateral locations, meaning only in one side of the head.</p>
+<hr>
+</section>
+<section id="discussion" class="level3">
+<h3 class="anchored" data-anchor-id="discussion">Discussion</h3>
+<p>My first hypothesis was younger people having both higher pain levels and longer duration of migraine periods. While the first part regarding the pain level was undermined by the scatter point graph it seemed to support the second part since the younger participants has more cases of short duration compared to participants in ages 21+. As for my second prediction concerning the pain levels given a location I was convince the frontal(3) location would be the most common and painful, however it seems like most of the participant across the table have suffered from unilateral(1) migraines at pain level of 3 which can be seen as intense pain. The ones who suffered from both unilateral and level 3 migraines also seemed to be those in ages 21-30 with 136 out of the 400 participants being in that category. I do believe less in my hypothesis and also wonder how even though ages 10-30 tend to be the most individuals with high technology access don’t suffer at level compared to the older generations.</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

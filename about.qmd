@@ -1,15 +1,15 @@
 ---
 title: "About me"
-image: profile.jpg
+image: "PFP_IMAGE.jpeg"
 about:
   template: solana
   links:
-    - icon: twitter
-      text: Twitter
-      href: https://twitter.com
+    - icon: handshake
+      text: Handshake
+      href: https://dom.joinhandshake.com/profiles/5e6mgg
     - icon: linkedin
       text: LinkedIn
-      href: https://linkedin.com
+      href: https://www.linkedin.com/in/yanin-galvan-735890336/
     - icon: github
       text: Github
       href: https://ygalvan05.github.io/yg_rcc_blog/
@@ -17,13 +17,15 @@ about:
 
 Welcome to my website showing off my R portfolio!
 
-#### Coding Experience
+I am Yanin a sophomore student at Dominican University with double majors on Computer Sci & Mathematics.
 
--   Java courses
+In this portfolio I will inspire to develop my career path as a back-end engineer by expanding my knowledge of coding languages as well as analytically skills.
 
--   R Crash Course Workshop
+#### Brief Coding Experience
 
-#### Education
+-   Java Programming Courses - Developed various projects using Eclipse such as recipe developers and BMI calculators
+
+-   R Crash Course Workshop - Obtained a better understanding of R and its helpful skill for data analysis
 
 ```{r}
 
