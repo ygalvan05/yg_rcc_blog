@@ -111,6 +111,8 @@ migraine_symptom_classification <- read.csv("migraine_symptom_classification.csv
 
 In this graph we use age as our x variable to see how as we age the majority of intensity for the migraines either minimize or maximize in the level of pain.
 
+**-Q1 Code 1-**
+
 ```{r}
 intensity_vs_age <- 
   ggplot(data = migraine_symptom_classification,
@@ -124,6 +126,8 @@ ggsave(filename = "intensity_vs_age.png")
 ```
 
 Unexpectedly, younger people actually have more cases of lower intensity levels ranging none-3 compared to older people whose majority of levels range from 2-3 only.
+
+**-Q1 Code 2-**
 
 ```{r}
 pain_duration_vs_age <- 
@@ -148,6 +152,8 @@ As for this code, it allows us to distinguish how based on the location of the m
 (Used methods such as arrange and filter to determine age groups needed)
 
 **Ex:** migraine_symptom_classification \|\> arrange(desc(Age))
+
+**-Q2 Code 1-**
 
 ```{r}
 #mutating a new data set that groups participants based on age range
@@ -183,4 +189,4 @@ As for my second prediction concerning the pain levels given a location, I was c
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-#### Special Thanks to Dr.Bob for the guidance and support given during the development of this project!   -Yanin G
+#### Special Thanks to Dr.Bob for the guidance and support given during the development of this project! -Yanin G
