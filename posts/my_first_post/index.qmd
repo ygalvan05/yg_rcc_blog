@@ -1,12 +1,12 @@
 ---
-title: "The -- project"
+title: "My Project"
 subtitle: "Data Analysis Visualization"
 author: "Yanin Galvan"
 date: "2025-08-06"
 categories: [data_science,data_visual]
 ---
 
-## Data analysis regarding migraines and relation between its factors.
+## Data analysis regarding migraines and relation between factors.
 
 ![](/MigraineVision.jpeg){fig-align="center"}
 
@@ -14,13 +14,13 @@ Image: representation of vision during a migraine episode with auras present a.k
 
 ### Introduction
 
--   **How does pain levels distribute across locations based on age?**
+1.  **How does pain levels distribute across locations based on age?**
 
-    -   **Prediction**: Younger people will have more high levels of pains therefore longer duration than older people.
+    **Prediction**: Younger people will have more high levels of pains therefore longer duration than older people.
 
--   **Does different locations trigger a different intensity level of migraines?**
+2.  **Does different locations trigger a different intensity level of migraines**
 
-    -   **Prediction**: Migraines near the frontal will be more common and create a more intense pain for the patients.
+    **Prediction**: Migraines near the frontal will be more common and create a more intense pain for the patients.
 
 ------------------------------------------------------------------------
 
@@ -30,35 +30,35 @@ Image: representation of vision during a migraine episode with auras present a.k
 
 Data was collected through public access publication of the National Library of Medicine and detailed symptoms profiles from observations.
 
-#### Variables:
+#### Variables From Data Set:
 
-+-----------------------------------------------------------------------+------------------------------------+----------------------------------------------------------------------------------------------+----------------------------------------+
-| **Age**: based on participant                                         | **Duration**: in hours             | **Location**:                                                                                | **Intensity**:                         |
-|                                                                       |                                    |                                                                                              |                                        |
-|                                                                       |                                    | 1-Unilateral, 2-Bilateral, 3-Frontal, 4-Temporal                                             | Pain from 1(mild) to 5(severe)         |
-+-----------------------------------------------------------------------+------------------------------------+----------------------------------------------------------------------------------------------+----------------------------------------+
-| **Frequency**: over specific period                                   | **Vomit**: 1-yes, 0-no             | **Language**: speaking ability                                                               | **Ataxia**: coordination problems      |
-|                                                                       |                                    |                                                                                              |                                        |
-|                                                                       |                                    | 1-yes, 0-no                                                                                  | 1-yes.0-no                             |
-+-----------------------------------------------------------------------+------------------------------------+----------------------------------------------------------------------------------------------+----------------------------------------+
-| **Character**: type of pain 1-throbbing, 2-pressing, 3-sharp, 4-dull  | **Phonophobia**: sound sensitivity | **Vertingo**:                                                                                | **Conscience**: reduced consciousness  |
-|                                                                       |                                    |                                                                                              |                                        |
-|                                                                       | 1-yes, 0-no                        | 1-yes, 0-no                                                                                  | 1-yes, 0-no                            |
-+-----------------------------------------------------------------------+------------------------------------+----------------------------------------------------------------------------------------------+----------------------------------------+
-| **Nausea**: any nausea present                                        | **Photophobia**: light sensitivity | **Tinnitus**:                                                                                | **Paresthesia**:                       |
-|                                                                       |                                    |                                                                                              |                                        |
-| 1-yes, 0-no                                                           | 1-yes, 0-no                        | 1-yes, 0-no                                                                                  | abnormal skin sensations               |
-|                                                                       |                                    |                                                                                              |                                        |
-|                                                                       |                                    |                                                                                              | 1-yes, 0-no                            |
-+-----------------------------------------------------------------------+------------------------------------+----------------------------------------------------------------------------------------------+----------------------------------------+
-| **Motor**: motor function                                             | **Visual**: aura or flashes        | **Hypoacusis**:                                                                              | **DPF**: Dysfunctional physical factor |
-|                                                                       |                                    |                                                                                              |                                        |
-| 1-yes, 0-no                                                           | 1-yes, 0-no                        | 1-yes, 0-no                                                                                  | 1-yes, 0-no                            |
-+-----------------------------------------------------------------------+------------------------------------+----------------------------------------------------------------------------------------------+----------------------------------------+
-| **Defect**: visual field defect                                       | **Sensory**: numbness or tingling  | **Diplopia**:                                                                                | **Type**:                              |
-|                                                                       |                                    |                                                                                              |                                        |
-| 1-yes, 0-no                                                           | 1-yes, 0-no                        | 1-yes, 0-no                                                                                  | (target variable)                      |
-+-----------------------------------------------------------------------+------------------------------------+----------------------------------------------------------------------------------------------+----------------------------------------+
++----------------------------------------------------------------------+------------------------------------+--------------------------------------------------+----------------------------------------+
+| **Age**:                                                             | **Duration**:                      | **Location**:                                    | **Intensity**:                         |
+|                                                                      |                                    |                                                  |                                        |
+| based on participant                                                 | in hours                           | 1-Unilateral, 2-Bilateral, 3-Frontal, 4-Temporal | Pain from 1(mild) to 5(severe)         |
++----------------------------------------------------------------------+------------------------------------+--------------------------------------------------+----------------------------------------+
+| **Frequency**: over specific period                                  | **Vomit**: 1-yes, 0-no             | **Language**: speaking ability                   | **Ataxia**: coordination problems      |
+|                                                                      |                                    |                                                  |                                        |
+|                                                                      |                                    | 1-yes, 0-no                                      | 1-yes.0-no                             |
++----------------------------------------------------------------------+------------------------------------+--------------------------------------------------+----------------------------------------+
+| **Character**: type of pain 1-throbbing, 2-pressing, 3-sharp, 4-dull | **Phonophobia**: sound sensitivity | **Vertingo**:                                    | **Conscience**: reduced consciousness  |
+|                                                                      |                                    |                                                  |                                        |
+|                                                                      | 1-yes, 0-no                        | 1-yes, 0-no                                      | 1-yes, 0-no                            |
++----------------------------------------------------------------------+------------------------------------+--------------------------------------------------+----------------------------------------+
+| **Nausea**: any nausea present                                       | **Photophobia**: light sensitivity | **Tinnitus**:                                    | **Paresthesia**:                       |
+|                                                                      |                                    |                                                  |                                        |
+| 1-yes, 0-no                                                          | 1-yes, 0-no                        | 1-yes, 0-no                                      | abnormal skin sensations               |
+|                                                                      |                                    |                                                  |                                        |
+|                                                                      |                                    |                                                  | 1-yes, 0-no                            |
++----------------------------------------------------------------------+------------------------------------+--------------------------------------------------+----------------------------------------+
+| **Motor**: motor function                                            | **Visual**: aura or flashes        | **Hypoacusis**:                                  | **DPF**: Dysfunctional physical factor |
+|                                                                      |                                    |                                                  |                                        |
+| 1-yes, 0-no                                                          | 1-yes, 0-no                        | 1-yes, 0-no                                      | 1-yes, 0-no                            |
++----------------------------------------------------------------------+------------------------------------+--------------------------------------------------+----------------------------------------+
+| **Defect**: visual field defect                                      | **Sensory**: numbness or tingling  | **Diplopia**:                                    | **Type**:                              |
+|                                                                      |                                    |                                                  |                                        |
+| 1-yes, 0-no                                                          | 1-yes, 0-no                        | 1-yes, 0-no                                      | (target variable)                      |
++----------------------------------------------------------------------+------------------------------------+--------------------------------------------------+----------------------------------------+
 
 Records of 24 variables and 400 participants(rows).
 
@@ -66,7 +66,7 @@ While type is under the variables table it is based on the final diagnosis on mi
 
 ------------------------------------------------------------------------
 
-#### Tools used:
+### Tools used:
 
 -   Posit cloud
 
@@ -82,15 +82,16 @@ While type is under the variables table it is based on the final diagnosis on mi
 
 ### Approach & Predictions
 
-I will analysis how the age of the participants factor into the pain levels of the migraines and the duration of such. As well as the location and its effect on the pain of the presented migraine during the time the records were made.
+**Brief Summary:** I will analysis how the age of the participants factor into the intensity levels of the migraines and the duration of such. As well as the location and its effect on the intensity of the presented migraine during the time the records were made.
 
-I predict participants with younger ages will have a higher pain intensity due to technology over use and longer duration due to long work shifts or long classes schedules during school(which both required an immense amount of technology use). Locations near the frontal part of our face will be the most common and painful due to daily habits disturbance from them.
+**Prediction for analysis:** I predict participants with younger ages will have a higher pain intensity due to technology over use and longer duration due to long work shifts or long classes schedules during school(which both required an immense amount of technology use). Locations near the frontal part of our face will be the most common and painful due to daily habits disturbance from them.
 
 ------------------------------------------------------------------------
 
 ### Codes & Results:
 
 ```{r}
+#Setting up our data set and packages needed
 library(ggplot2)
 library(tidyverse)
 migraine_symptom_classification <- read.csv("migraine_symptom_classification.csv")
@@ -98,7 +99,7 @@ migraine_symptom_classification <- read.csv("migraine_symptom_classification.csv
 
 **Age Correlation:**
 
-In this graph we use age as our x variable to see how as we age the intensity of the migraines ether minimize or maximizes in the level of pain.
+In this graph we use age as our x variable to see how as we age the majority of intensity for the migraines ether minimize or maximizes in the level of pain.
 
 ```{r}
 intensity_vs_age <- 
@@ -126,42 +127,43 @@ pain_duration_vs_age
 ggsave(filename = "pain_duration_vs_age.png")
 ```
 
-Image: In this graph we used the position of "jitter" in order to have a better understanding of the results of our 400 participants without it overlapping.
+Image: In this graph we used the position of "jitter" in order to have a better understanding of the results of our 400 participants without results overlapping.
 
-While the older participant had stronger pain levels they seem to have shorter duration migraines compared to the younger people which correlates with the second part of my prediction regarding age vs pain levels.
+While the older participant had stronger pain levels they seem to have shorter duration migraines compared to the younger people which correlates with the second part of my prediction regarding age vs intensity.
 
 **Location Correlation:**
 
-Our code allows us to distinguish how based on the location the pain distributes in different levels of intensity.
+As for this code it allows us to distinguish how based on the location of the migraine the levels of intensity differ for different age groups.
 
 (Used methods such as arrange and filter to determine age groups needed)
 
 **Ex:** migraine_symptom_classification \|\> arrange(desc(Age))
 
 ```{r}
+#mutating a new data set that groups participants based on age range
 new_migraine_symptom_classification <- migraine_symptom_classification |>
-  mutate(age_better = case_when(
+  mutate(age_grouped = case_when(
   Age > 10 & Age <= 20 ~ "10-20",Age > 20 & Age <= 30 ~"21-30", 
   Age > 30 & Age <= 40 ~"31-40", Age > 40 & Age <= 50 ~"41-50", 
   Age > 50 & Age <= 60 ~"51-60", Age > 60 & Age <= 90 ~"61+",))
 
+#creates new graph with new variablefor age given 
 intensity_vs_location <- ggplot(data = new_migraine_symptom_classification, 
-         mapping = aes(x = Location, y = Intensity, color = age_better)) +
+         mapping = aes(x = Location, y = Intensity, color = age_grouped)) +
   geom_point(position = "jitter") + 
-  facet_wrap(~age_better) + 
+  facet_wrap(~age_grouped) + 
   labs(x = "Location of pain(1-4)", y = "Self-Reported Intensity(1-5)",
        title = "How pain distributes on locatioons based on age", color = "Age Groups")
+
 
 intensity_vs_location
 ggsave(filename = "intensity_vs_location.png")
 
 ```
 
-Image: Those in between the ages of 21-30 located their pain in a unilateral location(making them 136 out of the 400 participants).
-
 Unlike my prediction the graph tells us the majority of the participant developed migraines in unilateral locations, meaning only in one side of the head.
 
-------------------------------------------------------------
+------------------------------------------------------------------------
 
 ### Discussion
 
