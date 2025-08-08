@@ -19,7 +19,7 @@ Welcome to my website showing off my R portfolio!
 
 I am Yanin a sophomore student at Dominican University with double majors on Computer Sci & Mathematics.
 
-In this portfolio I will inspire to develop my career path as a back-end engineer by expanding my knowledge of coding languages as well as analytically skills.
+In this portfolio I will inspire to develop my career path as a back-end engineer by expanding my knowledge of coding languages as well as analytically skills for my future career.
 
 #### Brief Coding Experience
 

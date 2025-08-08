@@ -10,15 +10,17 @@ categories: [data_science,data_visual]
 
 ![](/MigraineVision.jpeg){fig-align="center"}
 
-Image: representation of vision during a migraine episode with auras present a.k.a ocular migraines.
+Image: representation of vision during a migraine episode with auras present a.k.a ocular migraines
 
 ### Introduction
 
-1.  **How does pain levels distribute across locations based on age?**
+**Questions**
 
-    **Prediction**: Younger people will have more high levels of pains therefore longer duration than older people.
+1.  **How do pain levels distribute across locations based on age?**
 
-2.  **Does different locations trigger a different intensity level of migraines**
+    **Prediction**: Younger people will have higher levels of pains therefore longer duration than older people.
+
+2.  **Do different locations trigger a different intensity level of migraines?**
 
     **Prediction**: Migraines near the frontal will be more common and create a more intense pain for the patients.
 
@@ -28,7 +30,9 @@ Image: representation of vision during a migraine episode with auras present a.k
 
 **Data Source Info**: Kaggle, Migraine Symptom Data set for Classification
 
-Data was collected through public access publication of the National Library of Medicine and detailed symptoms profiles from observations.
+**Website**- [Kaggle Data Set Link](https://www.kaggle.com/datasets/gzdekzlkaya/migraine-symptom-dataset-for-classification)
+
+Data was collected through public access publication of the National Library of Medicine and detailed symptom profiles from observations.
 
 #### Variables From Data Set:
 
@@ -62,13 +66,19 @@ Data was collected through public access publication of the National Library of 
 
 Records of 24 variables and 400 participants(rows).
 
-While type is under the variables table it is based on the final diagnosis on migraine using the data set.
+-   Type is based on final diagnosis given the data
+
+-   All information came from participants own report, except if any DPF was present
+
+-   Participants are presented as anonymous
+
+-   Age variable was grouped into ranges in order to answer our second question, however no data regarding participants individual age was altered.
 
 ------------------------------------------------------------------------
 
 ### Tools used:
 
--   Posit cloud
+-   R studio, Posit.Cloud
 
 -   Github
 
@@ -82,9 +92,9 @@ While type is under the variables table it is based on the final diagnosis on mi
 
 ### Approach & Predictions
 
-**Brief Summary:** I will analysis how the age of the participants factor into the intensity levels of the migraines and the duration of such. As well as the location and its effect on the intensity of the presented migraine during the time the records were made.
+**Brief Summary:** I will analyze how the age of the participants factor into the intensity levels of the migraines and the duration of such. As well as the location and its effect on the intensity of the presented migraine during the time the records were made.
 
-**Prediction for analysis:** I predict participants with younger ages will have a higher pain intensity due to technology over use and longer duration due to long work shifts or long classes schedules during school(which both required an immense amount of technology use). Locations near the frontal part of our face will be the most common and painful due to daily habits disturbance from them.
+**Prediction for analysis:** I predict participants with younger ages will have a higher pain intensity of around 3 due to technology over use and longer duration of 2-3 hours due to long work shifts or classes schedules during school(which both required an immense amount of technology use). Locations near the frontal part of our face will be the most common with around 60% of participants and painful at a level of 3 due to daily habits disturbance from them.
 
 ------------------------------------------------------------------------
 
@@ -99,7 +109,7 @@ migraine_symptom_classification <- read.csv("migraine_symptom_classification.csv
 
 **Age Correlation:**
 
-In this graph we use age as our x variable to see how as we age the majority of intensity for the migraines ether minimize or maximizes in the level of pain.
+In this graph we use age as our x variable to see how as we age the majority of intensity for the migraines either minimize or maximize in the level of pain.
 
 ```{r}
 intensity_vs_age <- 
@@ -113,7 +123,7 @@ ggsave(filename = "intensity_vs_age.png")
 
 ```
 
-Unexpectedly younger people actually have more cases of lower intensity levels compared to older people, thus rejecting the first part of my prediction.
+Unexpectedly, younger people actually have more cases of lower intensity levels ranging none-3 compared to older people whose majority of levels range from 2-3 only.
 
 ```{r}
 pain_duration_vs_age <- 
@@ -129,11 +139,11 @@ ggsave(filename = "pain_duration_vs_age.png")
 
 Image: In this graph we used the position of "jitter" in order to have a better understanding of the results of our 400 participants without results overlapping.
 
-While the older participant had stronger pain levels they seem to have shorter duration migraines compared to the younger people which correlates with the second part of my prediction regarding age vs intensity.
+While the older participant had stronger pain levels they seem to also have longer duration migraines compared to the younger people due to it being manly light blue meaning up to 3 hours unlike the mainly dark blue results for those under 40.
 
 **Location Correlation:**
 
-As for this code it allows us to distinguish how based on the location of the migraine the levels of intensity differ for different age groups.
+As for this code, it allows us to distinguish how based on the location of the migraine the levels of intensity differ for different age groups.
 
 (Used methods such as arrange and filter to determine age groups needed)
 
@@ -161,10 +171,16 @@ ggsave(filename = "intensity_vs_location.png")
 
 ```
 
-Unlike my prediction the graph tells us the majority of the participant developed migraines in unilateral locations, meaning only in one side of the head.
+The graph tells us the majority of the participant developed migraines in unilateral locations, meaning only in one side of the head at the time which usually forms from the top of the skull straight down to our cheeckbone.
 
 ------------------------------------------------------------------------
 
 ### Discussion
 
-My first hypothesis was younger people having both higher pain levels and longer duration of migraine periods. While the first part regarding the pain level was undermined by the scatter point graph it seemed to support the second part since the younger participants has more cases of short duration compared to participants in ages 21+. As for my second prediction concerning the pain levels given a location I was convince the frontal(3) location would be the most common and painful, however it seems like most of the participant across the table have suffered from unilateral(1) migraines at pain level of 3 which can be seen as intense pain. The ones who suffered from both unilateral and level 3 migraines also seemed to be those in ages 21-30 with 136 out of the 400 participants being in that category. I do believe less in my hypothesis and also wonder how even though ages 10-30 tend to be the most individuals with high technology access don't suffer at level compared to the older generations.
+My first hypothesis was younger people having both higher pain levels and longer duration of migraine periods. My predictions seem to be undermined by the results of the graph. While I believed the majority of younger participants would be highly exposed to technology, thus causing the higher migraine duration and intensity levels, the graph concluded the participants over 40 had an average of 3 level migraine intensity at a range of 2-3 hours. Meanwhile younger people not only have more cases of lower intensity but a more diverse result of duration ranging 0-3 with majority being 1 hour only,
+
+As for my second prediction concerning the pain levels given a location, I was convince the frontal(3) location would be the most common and painful, however it seems like most of the participant across the table have suffered from unilateral(1) migraines at pain level of 3 which can be seen as intense pain. The ones who suffered from both unilateral and level 3 migraines also seemed to be those in ages 21-30 with 136 out of the 400 participants being in that category. I do believe less in my hypothesis and also wonder how even though ages 10-30 tend to be the most individuals with high technology access don't suffer at level compared to the older generations.
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+#### Special Thanks to Dr.Bob for the guidance and support given during the development of this project!   -Yanin G

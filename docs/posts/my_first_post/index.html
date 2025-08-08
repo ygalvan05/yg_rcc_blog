@@ -199,13 +199,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="../../MigraineVision.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-<p>Image: representation of vision during a migraine episode with auras present a.k.a ocular migraines.</p>
+<p>Image: representation of vision during a migraine episode with auras present a.k.a ocular migraines</p>
 <section id="introduction" class="level3">
 <h3 class="anchored" data-anchor-id="introduction">Introduction</h3>
+<p><strong>Questions</strong></p>
 <ol type="1">
-<li><p><strong>How does pain levels distribute across locations based on age?</strong></p>
-<p><strong>Prediction</strong>: Younger people will have more high levels of pains therefore longer duration than older people.</p></li>
-<li><p><strong>Does different locations trigger a different intensity level of migraines</strong></p>
+<li><p><strong>How do pain levels distribute across locations based on age?</strong></p>
+<p><strong>Prediction</strong>: Younger people will have higher levels of pains therefore longer duration than older people.</p></li>
+<li><p><strong>Do different locations trigger a different intensity level of migraines?</strong></p>
 <p><strong>Prediction</strong>: Migraines near the frontal will be more common and create a more intense pain for the patients.</p></li>
 </ol>
 <hr>
@@ -213,15 +214,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="approach" class="level3">
 <h3 class="anchored" data-anchor-id="approach">Approach</h3>
 <p><strong>Data Source Info</strong>: Kaggle, Migraine Symptom Data set for Classification</p>
-<p>Data was collected through public access publication of the National Library of Medicine and detailed symptoms profiles from observations.</p>
+<p><strong>Website</strong>- <a href="https://www.kaggle.com/datasets/gzdekzlkaya/migraine-symptom-dataset-for-classification">Kaggle Data Set Link</a></p>
+<p>Data was collected through public access publication of the National Library of Medicine and detailed symptom profiles from observations.</p>
 <section id="variables-from-data-set" class="level4">
 <h4 class="anchored" data-anchor-id="variables-from-data-set">Variables From Data Set:</h4>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 32%">
-<col style="width: 15%">
-<col style="width: 33%">
-<col style="width: 17%">
+<col style="width: 35%">
+<col style="width: 18%">
+<col style="width: 25%">
+<col style="width: 20%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -285,14 +287,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <p>Records of 24 variables and 400 participants(rows).</p>
-<p>While type is under the variables table it is based on the final diagnosis on migraine using the data set.</p>
+<ul>
+<li><p>Type is based on final diagnosis given the data</p></li>
+<li><p>All information came from participants own report, except if any DPF was present</p></li>
+<li><p>Participants are presented as anonymous</p></li>
+<li><p>Age variable was grouped into ranges in order to answer our second question, however no data regarding participants individual age was altered.</p></li>
+</ul>
 <hr>
 </section>
 </section>
 <section id="tools-used" class="level3">
 <h3 class="anchored" data-anchor-id="tools-used">Tools used:</h3>
 <ul>
-<li><p>Posit cloud</p></li>
+<li><p>R studio, Posit.Cloud</p></li>
 <li><p>Github</p></li>
 <li><p>tidyverse package</p></li>
 <li><p>ggplots2 package</p></li>
@@ -302,8 +309,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="approach-predictions" class="level3">
 <h3 class="anchored" data-anchor-id="approach-predictions">Approach &amp; Predictions</h3>
-<p><strong>Brief Summary:</strong> I will analysis how the age of the participants factor into the intensity levels of the migraines and the duration of such. As well as the location and its effect on the intensity of the presented migraine during the time the records were made.</p>
-<p><strong>Prediction for analysis:</strong> I predict participants with younger ages will have a higher pain intensity due to technology over use and longer duration due to long work shifts or long classes schedules during school(which both required an immense amount of technology use). Locations near the frontal part of our face will be the most common and painful due to daily habits disturbance from them.</p>
+<p><strong>Brief Summary:</strong> I will analyze how the age of the participants factor into the intensity levels of the migraines and the duration of such. As well as the location and its effect on the intensity of the presented migraine during the time the records were made.</p>
+<p><strong>Prediction for analysis:</strong> I predict participants with younger ages will have a higher pain intensity of around 3 due to technology over use and longer duration of 2-3 hours due to long work shifts or classes schedules during school(which both required an immense amount of technology use). Locations near the frontal part of our face will be the most common with around 60% of participants and painful at a level of 3 due to daily habits disturbance from them.</p>
 <hr>
 </section>
 <section id="codes-results" class="level3">
@@ -326,7 +333,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>migraine_symptom_classification <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"migraine_symptom_classification.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Age Correlation:</strong></p>
-<p>In this graph we use age as our x variable to see how as we age the majority of intensity for the migraines ether minimize or maximizes in the level of pain.</p>
+<p>In this graph we use age as our x variable to see how as we age the majority of intensity for the migraines either minimize or maximize in the level of pain.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>intensity_vs_age <span class="ot">&lt;-</span> </span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">data =</span> migraine_symptom_classification,</span>
@@ -347,7 +354,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>Saving 7 x 5 in image</code></pre>
 </div>
 </div>
-<p>Unexpectedly younger people actually have more cases of lower intensity levels compared to older people, thus rejecting the first part of my prediction.</p>
+<p>Unexpectedly, younger people actually have more cases of lower intensity levels ranging none-3 compared to older people whose majority of levels range from 2-3 only.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>pain_duration_vs_age <span class="ot">&lt;-</span> </span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">data =</span> migraine_symptom_classification,</span>
@@ -370,9 +377,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Image: In this graph we used the position of “jitter” in order to have a better understanding of the results of our 400 participants without results overlapping.</p>
-<p>While the older participant had stronger pain levels they seem to have shorter duration migraines compared to the younger people which correlates with the second part of my prediction regarding age vs intensity.</p>
+<p>While the older participant had stronger pain levels they seem to also have longer duration migraines compared to the younger people due to it being manly light blue meaning up to 3 hours unlike the mainly dark blue results for those under 40.</p>
 <p><strong>Location Correlation:</strong></p>
-<p>As for this code it allows us to distinguish how based on the location of the migraine the levels of intensity differ for different age groups.</p>
+<p>As for this code, it allows us to distinguish how based on the location of the migraine the levels of intensity differ for different age groups.</p>
 <p>(Used methods such as arrange and filter to determine age groups needed)</p>
 <p><strong>Ex:</strong> migraine_symptom_classification |&gt; arrange(desc(Age))</p>
 <div class="cell">
@@ -405,14 +412,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>Saving 7 x 5 in image</code></pre>
 </div>
 </div>
-<p>Unlike my prediction the graph tells us the majority of the participant developed migraines in unilateral locations, meaning only in one side of the head.</p>
+<p>The graph tells us the majority of the participant developed migraines in unilateral locations, meaning only in one side of the head at the time which usually forms from the top of the skull straight down to our cheeckbone.</p>
 <hr>
 </section>
 <section id="discussion" class="level3">
 <h3 class="anchored" data-anchor-id="discussion">Discussion</h3>
-<p>My first hypothesis was younger people having both higher pain levels and longer duration of migraine periods. While the first part regarding the pain level was undermined by the scatter point graph it seemed to support the second part since the younger participants has more cases of short duration compared to participants in ages 21+. As for my second prediction concerning the pain levels given a location I was convince the frontal(3) location would be the most common and painful, however it seems like most of the participant across the table have suffered from unilateral(1) migraines at pain level of 3 which can be seen as intense pain. The ones who suffered from both unilateral and level 3 migraines also seemed to be those in ages 21-30 with 136 out of the 400 participants being in that category. I do believe less in my hypothesis and also wonder how even though ages 10-30 tend to be the most individuals with high technology access don’t suffer at level compared to the older generations.</p>
+<p>My first hypothesis was younger people having both higher pain levels and longer duration of migraine periods. My predictions seem to be undermined by the results of the graph. While I believed the majority of younger participants would be highly exposed to technology, thus causing the higher migraine duration and intensity levels, the graph concluded the participants over 40 had an average of 3 level migraine intensity at a range of 2-3 hours. Meanwhile younger people not only have more cases of lower intensity but a more diverse result of duration ranging 0-3 with majority being 1 hour only,</p>
+<p>As for my second prediction concerning the pain levels given a location, I was convince the frontal(3) location would be the most common and painful, however it seems like most of the participant across the table have suffered from unilateral(1) migraines at pain level of 3 which can be seen as intense pain. The ones who suffered from both unilateral and level 3 migraines also seemed to be those in ages 21-30 with 136 out of the 400 participants being in that category. I do believe less in my hypothesis and also wonder how even though ages 10-30 tend to be the most individuals with high technology access don’t suffer at level compared to the older generations.</p>
+<p>____________________________</p>
+<section id="special-thanks-to-dr.bob-for-the-guidance-and-support-given-during-the-development-of-this-project--yanin-g" class="level4">
+<h4 class="anchored" data-anchor-id="special-thanks-to-dr.bob-for-the-guidance-and-support-given-during-the-development-of-this-project--yanin-g">Special Thanks to Dr.Bob for the guidance and support given during the development of this project! -Yanin G</h4>
 
 
+</section>
 </section>
 </section>
 
